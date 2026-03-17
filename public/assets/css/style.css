@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    background-color: #000000;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+    cursor: crosshair;
+}
+
+#app-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.interactive-element {
+    position: absolute;
+    transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.dot:hover, .shape:hover, .text-block:hover, .image-block:hover {
+    background-color: #ff0000;
+    filter: brightness(1.5);
+}
+
+.shape {
+    background-color: #ffffff;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.square {
+    border-radius: 2px;
+}
+
+.line {
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.text-block {
+    color: #ffffff;
+    font-size: clamp(12px, 1.5vw, 18px);
+    padding: 2px 4px;
+    max-width: 200px;
+    line-height: 1.4;
+}
+
+.image-block {
+    width: clamp(50px, 10vw, 120px);
+    height: clamp(50px, 10vw, 120px);
+    background-image: url('../media/placeholder.png');
+    background-size: cover;
+    filter: grayscale(100%) contrast(150%);
+}
+
+.red-accent {
+    background-color: #ff0000 !important;
+    color: #ff0000 !important;
+}
+
+.white-accent {
+    background-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.secret-reveal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.secret-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.secret-square {
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secret-text {
+    color: #000000;
+    font-size: clamp(16px, 3vw, 24px);
+    font-weight: 700;
+}
+
+.secret-title {
+    color: #ffffff;
+    font-size: clamp(20px, 4vw, 32px);
+    line-height: 1.2;
+}
