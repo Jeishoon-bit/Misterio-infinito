@@ -1,0 +1,19 @@
+# Evitar previsualización de archivos
+<FilesMatch "\.(zip|gif|mp3|png|ttf)$">
+    Header set Content-Disposition "attachment"
+    Header set X-Content-Type-Options "nosniff"
+</FilesMatch>
+
+# Ocultar estructura de carpetas
+Options -Indexes
+
+# Bloquear acceso a archivos JS/CSS directamente
+<FilesMatch "\.(js|css)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Redirigir todo al index
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]
