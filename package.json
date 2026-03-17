@@ -1,0 +1,15 @@
+{
+  "name": "misterio-infinito",
+  "version": "1.0.0",
+  "description": "Laberinto web sin fin",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve public"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
